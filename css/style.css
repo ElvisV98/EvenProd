@@ -1,4 +1,10 @@
 
+/* Ocultamos el botón de hamburguesa por defecto (en escritorio) */
+.menu-hamburguesa{
+    display: none;
+}
+
+
 /*este inicio de codigo es para quitar los márgenes y rellenos que los navegadores ponen por defecto, es una buena practica
 */
 
@@ -569,4 +575,89 @@ a.btn-contacto:hover{
 .footer-bottom p {
     font-size: 14px;
     color: #aaa;
+}
+
+/* DISEÑO RESPONSIVO */
+/* 'max-width: 768px' significa:
+   "Aplica estos estilos SOLAMENTE si la pantalla 
+   mide 768px de ancho o MENOS (tablets y celulares)"
+*/
+
+@media (max-width: 768px) {
+
+    /* 1.- arreglamos todas las cuadriculas, el grid pasara ahora a 1 columna al verse en telefonos/Tablets*/
+    .eventos-grid,
+    .nosotros-stats,
+    .servicios-grid{
+        grid-template-columns: 1fr;
+    }
+
+    /* 2.- Arreglamos los contenedores (Flexbox) Le decimos a nuestros contenedores de 2 columnas que se pongan 
+       uno ENCIMA del otro, en lugar de uno AL LADO del otro */
+    .nosotros-contenido,
+    .contacto-container,
+    .footer-container {
+        flex-direction: column;
+    }
+
+    /* 3. Ajustamos el padding general, Reducimos el espacio a los lados en todas las secciones */
+
+    .header,
+    .nosotros,
+    .servicios,
+    .galeria,
+    .contacto {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* 4. arreglamos el header */
+
+    /* mostramos el boton de hamburguesa oculto*/
+
+    .menu-hamburguesa {
+        display: block;
+        font-size: 24px;
+        background: none;
+        border: none;
+        color: #333;
+        cursor: pointer;
+    }
+
+    /* Ocultamos el menú de navegación normal */
+    .menu-navegacion {
+        display: none; /* ¡LO ESCONDEMOS! */
+        /* Y lo rediseñamos para que ocupe toda la pantalla cuando aparezca */
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1) ;
+    }
+
+    /* Le decimos a los <li> que ahora sean verticales */
+    .menu-navegacion li {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    /* Hacemos que los enlaces se vean grandes */
+    .menu-navegacion li a {
+        display: block;
+        padding:  20px;
+        text-align: center;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    /* Hacemos que el botón "Contacto" ocupe todo el ancho */
+    .menu-navegacion li a.btn-contacto {
+        border-radius: 0;
+        margin: 0;
+        }
+
+    /* Cuando el menú tenga esta clase en javascript, se mostrará */
+    .menu-navegacion.visible {
+        display: block;
+    }
 }
