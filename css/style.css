@@ -592,6 +592,10 @@ a.btn-contacto:hover{
         grid-template-columns: 1fr;
     }
 
+    .evento-card {
+        width: 100%; /* O 'auto'. Le quita el ancho fijo de 380px */
+    }
+
     /* 2.- Arreglamos los contenedores (Flexbox) Le decimos a nuestros contenedores de 2 columnas que se pongan 
        uno ENCIMA del otro, en lugar de uno AL LADO del otro */
     .nosotros-contenido,
