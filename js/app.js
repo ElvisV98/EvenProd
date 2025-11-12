@@ -78,13 +78,11 @@ if (formulario) { // (Nos aseguramos de que el formulario exista antes de escuch
 
     }
 
-    //DECISION FINAL
-    else{
-        alert('¡Gracias! Tu formulario ha sido enviado.');
+    //DECISION FINAL    
     
         formulario.submit();// ¡LE DAMOS PERMISO MANUALMENTE PARA SEGUIR!    
         formulario.reset();//Limpiamos todos los campos del formulario.
-        }
+        
     });
 } // --- LISTENER PARA EL FORMULARIO (FIN) ---
 
