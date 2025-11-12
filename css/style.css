@@ -602,6 +602,7 @@ a.btn-contacto:hover{
     .contacto-container,
     .footer-container {
         flex-direction: column;
+        align-items: center; 
     }
 
     /* 3. Ajustamos el padding general, Reducimos el espacio a los lados en todas las secciones */
@@ -664,4 +665,7 @@ a.btn-contacto:hover{
     .menu-navegacion.visible {
         display: block;
     }
+
+
+    
 }
